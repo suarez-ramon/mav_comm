@@ -21,7 +21,7 @@
 #ifndef DEFAULT_TOPICS_H_
 #define DEFAULT_TOPICS_H_
 
-namespace mav_msgs {
+namespace mav_msgs_rotors {
 namespace default_topics {
 
 static constexpr char IMU[] = "imu";
@@ -58,6 +58,6 @@ static constexpr char GROUND_TRUTH_POSE[] = "ground_truth/pose";
 static constexpr char GROUND_TRUTH_TWIST[] = "ground_truth/twist";
 
 }  // end namespace default_topics
-}  // end namespace mav_msgs
+}  // end namespace mav_msgs_rotors
 
 #endif /* DEFAULT_TOPICS_H_ */

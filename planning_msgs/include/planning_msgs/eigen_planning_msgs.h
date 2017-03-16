@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-#ifndef PLANNING_MSGS_EIGEN_MAV_MSGS_H
-#define PLANNING_MSGS_EIGEN_MAV_MSGS_H
+#ifndef PLANNING_MSGS_EIGEN_mav_msgs_rotors_H
+#define PLANNING_MSGS_EIGEN_mav_msgs_rotors_H
 
 #include <Eigen/Eigen>
 #include <vector>

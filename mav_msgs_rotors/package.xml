@@ -1,5 +1,5 @@
 <package>
-  <name>mav_msgs</name>
+  <name>mav_msgs_rotors</name>
   <version>3.2.0</version>
   <description>Package containing messages for communicating with rotary wing MAVs</description>
 

@@ -20,15 +20,15 @@
 
 // Common conversion functions between geometry messages, Eigen types, and yaw.
 
-#ifndef MAV_MSGS_COMMON_H
-#define MAV_MSGS_COMMON_H
+#ifndef mav_msgs_rotors_COMMON_H
+#define mav_msgs_rotors_COMMON_H
 
 #include <Eigen/Geometry>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Quaternion.h>
 #include <geometry_msgs/Vector3.h>
 
-namespace mav_msgs {
+namespace mav_msgs_rotors {
 
 /// Magnitude of Earth's gravitational field at specific height [m] and latitude
 /// [rad] (from wikipedia).
@@ -153,6 +153,6 @@ inline double getShortestYawDistance(double yaw1, double yaw2) {
   return yaw_mod;
 }
 
-}  // namespace mav_msgs
+}  // namespace mav_msgs_rotors
 
-#endif  // MAV_MSGS_COMMON_H
+#endif  // mav_msgs_rotors_COMMON_H

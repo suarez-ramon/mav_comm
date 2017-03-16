@@ -20,7 +20,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>mav_msgs</depend>
+  <depend>mav_msgs_rotors</depend>
   <depend>message_generation</depend>
   <depend>message_runtime</depend>
   <depend>trajectory_msgs</depend>

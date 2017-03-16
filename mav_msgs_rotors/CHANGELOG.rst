@@ -1,11 +1,11 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package mav_msgs
+Changelog for package mav_msgs_rotors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3.1.0 (2016-12-01)
 ------------------
 * Add getEulerAngles method to EigenOdometry message.
 * Improved quaternionFromMsg unit quaternion checking.
-* Add EigenMavState to eigen_mav_msgs.
+* Add EigenMavState to eigen_mav_msgs_rotors.
 * Add EigenMavStateFromEigenTrajectoryPoint conversion.
 * Add `timestamp_ns` to EigenTrajectoryPoint.
 * Add default values in a seperate header.

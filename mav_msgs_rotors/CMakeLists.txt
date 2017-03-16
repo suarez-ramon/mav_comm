@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(mav_msgs)
+project(mav_msgs_rotors)
 
 find_package(catkin REQUIRED cmake_modules message_generation std_msgs geometry_msgs trajectory_msgs)
 include_directories(include ${catkin_INCLUDE_DIRS})

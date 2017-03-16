@@ -18,16 +18,16 @@
  * limitations under the License.
  */
 
-#ifndef MAV_MSGS_DEFAULT_VALUES_H_
-#define MAV_MSGS_DEFAULT_VALUES_H_
+#ifndef mav_msgs_rotors_DEFAULT_VALUES_H_
+#define mav_msgs_rotors_DEFAULT_VALUES_H_
 
-#include <mav_msgs/common.h>
+#include <mav_msgs_rotors/common.h>
 
-namespace mav_msgs {
+namespace mav_msgs_rotors {
 
 const double kZurichLatitude = 0.8267;
 const double kZurichHeight = 405.94;
 const double kGravity = MagnitudeOfGravity(kZurichHeight, kZurichLatitude);
 }
 
-#endif /* MAV_MSGS_DEFAULT_VALUES_H_ */
+#endif /* mav_msgs_rotors_DEFAULT_VALUES_H_ */

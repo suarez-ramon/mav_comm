@@ -20,8 +20,8 @@
 
 // Conversion functions between Eigen types and MAV ROS message types.
 
-#ifndef MAV_MSGS_CONVERSIONS_H
-#define MAV_MSGS_CONVERSIONS_H
+#ifndef mav_msgs_rotors_CONVERSIONS_H
+#define mav_msgs_rotors_CONVERSIONS_H
 
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -32,16 +32,16 @@
 #include <ros/ros.h>
 #include <trajectory_msgs/MultiDOFJointTrajectory.h>
 
-#include "mav_msgs/Actuators.h"
-#include "mav_msgs/AttitudeThrust.h"
-#include "mav_msgs/common.h"
-#include "mav_msgs/default_values.h"
-#include "mav_msgs/eigen_mav_msgs.h"
-#include "mav_msgs/RateThrust.h"
-#include "mav_msgs/RollPitchYawrateThrust.h"
-#include "mav_msgs/TorqueThrust.h"
+#include "mav_msgs_rotors/Actuators.h"
+#include "mav_msgs_rotors/AttitudeThrust.h"
+#include "mav_msgs_rotors/common.h"
+#include "mav_msgs_rotors/default_values.h"
+#include "mav_msgs_rotors/eigen_mav_msgs_rotors.h"
+#include "mav_msgs_rotors/RateThrust.h"
+#include "mav_msgs_rotors/RollPitchYawrateThrust.h"
+#include "mav_msgs_rotors/TorqueThrust.h"
 
-namespace mav_msgs {
+namespace mav_msgs_rotors {
 
 inline void eigenAttitudeThrustFromMsg(const AttitudeThrust& msg,
                                        EigenAttitudeThrust* attitude_thrust) {
@@ -106,12 +106,12 @@ inline void eigenOdometryFromMsg(const nav_msgs::Odometry& msg,
                                  EigenOdometry* odometry) {
   assert(odometry != NULL);
   odometry->timestamp_ns = msg.header.stamp.toNSec();
-  odometry->position_W = mav_msgs::vector3FromPointMsg(msg.pose.pose.position);
+  odometry->position_W = mav_msgs_rotors::vector3FromPointMsg(msg.pose.pose.position);
   odometry->orientation_W_B =
-      mav_msgs::quaternionFromMsg(msg.pose.pose.orientation);
-  odometry->velocity_B = mav_msgs::vector3FromMsg(msg.twist.twist.linear);
+      mav_msgs_rotors::quaternionFromMsg(msg.pose.pose.orientation);
+  odometry->velocity_B = mav_msgs_rotors::vector3FromMsg(msg.twist.twist.linear);
   odometry->angular_velocity_B =
-      mav_msgs::vector3FromMsg(msg.twist.twist.angular);
+      mav_msgs_rotors::vector3FromMsg(msg.twist.twist.angular);
   odometry->pose_covariance_ = Eigen::Map<const Eigen::Matrix<double, 6, 6>>(
       msg.pose.covariance.data());
   odometry->twist_covariance_ = Eigen::Map<const Eigen::Matrix<double, 6, 6>>(
@@ -516,6 +516,6 @@ inline void msgMultiDofJointTrajectoryFromEigen(
   msgMultiDofJointTrajectoryFromEigen(trajectory, "base_link", msg);
 }
 
-}  // end namespace mav_msgs
+}  // end namespace mav_msgs_rotors
 
-#endif  // MAV_MSGS_CONVERSIONS_H
+#endif  // mav_msgs_rotors_CONVERSIONS_H

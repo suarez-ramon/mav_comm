@@ -18,16 +18,16 @@
  * limitations under the License.
  */
 
-#ifndef MAV_MSGS_EIGEN_MAV_MSGS_H
-#define MAV_MSGS_EIGEN_MAV_MSGS_H
+#ifndef mav_msgs_rotors_EIGEN_mav_msgs_rotors_H
+#define mav_msgs_rotors_EIGEN_mav_msgs_rotors_H
 
 #include <deque>
 #include <Eigen/Eigen>
 #include <iostream>
 
-#include "mav_msgs/common.h"
+#include "mav_msgs_rotors/common.h"
 
-namespace mav_msgs {
+namespace mav_msgs_rotors {
 
 struct EigenAttitudeThrust {
   EigenAttitudeThrust()
@@ -262,20 +262,20 @@ struct EigenOdometry {
 };
 
 // TODO(helenol): replaced with aligned allocator headers from Simon.
-#define MAV_MSGS_CONCATENATE(x, y) x##y
-#define MAV_MSGS_CONCATENATE2(x, y) MAV_MSGS_CONCATENATE(x, y)
-#define MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EIGEN_TYPE)                     \
+#define mav_msgs_rotors_CONCATENATE(x, y) x##y
+#define mav_msgs_rotors_CONCATENATE2(x, y) mav_msgs_rotors_CONCATENATE(x, y)
+#define mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EIGEN_TYPE)                     \
   typedef std::vector<EIGEN_TYPE, Eigen::aligned_allocator<EIGEN_TYPE> > \
-      MAV_MSGS_CONCATENATE2(EIGEN_TYPE, Vector);                         \
+      mav_msgs_rotors_CONCATENATE2(EIGEN_TYPE, Vector);                         \
   typedef std::deque<EIGEN_TYPE, Eigen::aligned_allocator<EIGEN_TYPE> >  \
-      MAV_MSGS_CONCATENATE2(EIGEN_TYPE, Deque);
+      mav_msgs_rotors_CONCATENATE2(EIGEN_TYPE, Deque);
 
-MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EigenAttitudeThrust)
-MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EigenActuators)
-MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EigenRateThrust)
-MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EigenTrajectoryPoint)
-MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EigenRollPitchYawrateThrust)
-MAV_MSGS_MAKE_ALIGNED_CONTAINERS(EigenOdometry)
+mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EigenAttitudeThrust)
+mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EigenActuators)
+mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EigenRateThrust)
+mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EigenTrajectoryPoint)
+mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EigenRollPitchYawrateThrust)
+mav_msgs_rotors_MAKE_ALIGNED_CONTAINERS(EigenOdometry)
 }
 
-#endif  // MAV_MSGS_EIGEN_MAV_MSGS_H
+#endif  // mav_msgs_rotors_EIGEN_mav_msgs_rotors_H
